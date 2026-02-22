@@ -1,0 +1,118 @@
+.place-order {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 50px;
+    margin-top: 30px;
+    padding: 0 80px;
+}
+
+.place-order-left {
+    flex: 1;
+    max-width: 50%;
+}
+
+.place-order-right {
+    flex: 1;
+    max-width: 40%;
+}
+
+.place-order-left .title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.place-order-left .multi-fields {
+    display: flex;
+    gap: 10px;
+}
+
+.place-order-left input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.place-order-right {
+    flex: 1;
+    max-width: 40%;
+}
+
+.place-order-right .cart-total {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.place-order-right .cart-total h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.place-order-right .cart-total-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+@media (max-width:768px) {
+    .place-order {
+        flex-direction: column;
+    }
+}
+
+@media (max-width:500px) {
+    .place-order {
+        flex-direction: column;
+    }
+}
+
+@media (max-width:1000px) {
+    .place-order {
+        flex-direction: column;
+    }
+}
+
+/* Dark mode */
+body.dark .place-order-left .title {
+    color: #e0e0e0;
+}
+
+body.dark .place-order-left input {
+    background-color: #2a2a3d;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+body.dark .place-order-left input::placeholder {
+    color: #888;
+}
+
+body.dark .place-order-right .cart-total {
+    background-color: #1e1e2e;
+    color: #e0e0e0;
+}
+
+body.dark .place-order-right .cart-total h2 {
+    color: #e0e0e0;
+}
+
+body.dark .place-order-right .cart-total-details p,
+body.dark .place-order-right .cart-total-details b {
+    color: #e0e0e0;
+}
+
+body.dark .place-order-right .cart-total hr {
+    background-color: #444;
+    border: none;
+    height: 1px;
+}
+
+body.dark .place-order-right .cart-total button {
+    background: linear-gradient(135deg, tomato, #ff6b3d);
+    color: white;
+    border: none;
+}

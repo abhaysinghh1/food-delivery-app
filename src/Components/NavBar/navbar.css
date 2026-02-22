@@ -1,0 +1,249 @@
+.navbar {
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 150px;
+    ;
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    color: var(--text-primary);
+    font-size: 18px;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar .signin-btn {
+    background: transparent;
+    font-size: 16px;
+    color: var(--text-secondary);
+    border: 1px solid tomato;
+    padding: 10px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.navbar .signin-btn:hover {
+    background: var(--btn-hover-bg);
+    color: var(--text-secondary);
+    border: 1px solid var(--text-secondary);
+}
+
+.navbar-search-icon {
+    position: relative;
+}
+
+.navbar-search-icon .dot {
+    position: absolute;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: tomato;
+    border-radius: 5px;
+    top: -8px;
+    right: -8px;
+}
+
+.navbar .active {
+    padding-bottom: 2px;
+    border-bottom: 2px solid var(--text-secondary);
+}
+
+.navbar li:hover {
+    cursor: pointer;
+}
+
+/* ===== Theme Toggle Switch ===== */
+.theme-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+}
+
+.toggle-track {
+    position: relative;
+    width: 56px;
+    height: 28px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ffd86f, #fc6262);
+    transition: background 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.toggle-track.dark {
+    background: linear-gradient(135deg, #2d3561, #1e215d);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.toggle-icon {
+    font-size: 14px;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+    line-height: 1;
+}
+
+.toggle-track .sun {
+    opacity: 1;
+}
+
+.toggle-track .moon {
+    opacity: 0.4;
+}
+
+.toggle-track.dark .sun {
+    opacity: 0.4;
+}
+
+.toggle-track.dark .moon {
+    opacity: 1;
+}
+
+.toggle-thumb {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #fff;
+    top: 3px;
+    left: 3px;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-track.dark .toggle-thumb {
+    transform: translateX(28px);
+    background: #e8e8e8;
+}
+
+.navbar-right img {
+    filter: var(--icon-filter, none);
+}
+
+@media (max-width: 900px) {
+    .navbar .logo {
+        width: 120px;
+    }
+
+    .navbar-menu {
+        gap: 15px;
+        font-size: 15px;
+    }
+
+    .navbar-right {
+        gap: 15px;
+    }
+
+    .navbar .signin-img {
+        width: 22px;
+    }
+
+    .navbar .signin-btn {
+        padding: 7px 15px;
+        font-size: 13px;
+    }
+
+    .toggle-track {
+        width: 48px;
+        height: 24px;
+    }
+
+    .toggle-thumb {
+        width: 18px;
+        height: 18px;
+    }
+
+    .toggle-track.dark .toggle-thumb {
+        transform: translateX(24px);
+    }
+
+    .toggle-icon {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 750px) {
+    .navbar .logo {
+        width: 100px;
+    }
+
+    .navbar-menu {
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    .navbar-right {
+        gap: 15px;
+    }
+
+    .navbar .signin-img {
+        width: 22px;
+    }
+
+    .navbar .signin-btn {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar {
+        padding: 15px 0px;
+    }
+
+    .navbar .logo {
+        width: 90px;
+
+    }
+
+    .navbar-menu {
+        display: none;
+    }
+
+    .navbar-right {
+        gap: 12px;
+    }
+
+    .navbar-right>img {
+        width: 20px;
+    }
+
+    .navbar .signin-btn {
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+
+    .toggle-track {
+        width: 42px;
+        height: 22px;
+    }
+
+    .toggle-thumb {
+        width: 16px;
+        height: 16px;
+    }
+
+    .toggle-track.dark .toggle-thumb {
+        transform: translateX(20px);
+    }
+
+    .toggle-icon {
+        font-size: 10px;
+    }
+}

@@ -1,0 +1,133 @@
+.header {
+    height: 34vw;
+    margin: 30px auto;
+    background: url('/src/assets/header_img.png') no-repeat;
+    background-size: contain;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.header-contents {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.5vw;
+    max-width: 50%;
+    bottom: 10%;
+    left: 6vw;
+    animation: fadeIn 3s;
+}
+
+.header-contents h2 {
+    font-weight: 500;
+    color: white;
+    font-size: max(4.5vw, 22px);
+}
+
+.header-contents p {
+    color: white;
+    font-size: 1vw;
+}
+
+.header-contents button {
+    border: none;
+    color: #525050;
+    font-weight: 500;
+    padding: 1vw 2.3vw;
+    background-color: white;
+    font-size: max(1vw, 13px);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.header-contents button:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 900px) {
+    .header {
+        height: 38vw;
+        background-size: cover;
+        border-radius: 10px;
+    }
+
+    .header-contents h2 {
+        font-size: max(3vw, 20px);
+    }
+
+    .header-contents p {
+        font-size: max(1.2vw, 10px);
+    }
+
+    .header-contents button {
+        padding: 8px 18px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 750px) {
+    .header {
+        height: 38vw;
+        background-size: cover;
+    }
+
+    .header-contents {
+        max-width: 60%;
+        gap: 8px;
+    }
+
+    .header-contents h2 {
+        font-size: max(3vw, 17px);
+    }
+
+    .header-contents p {
+        font-size: max(1.5vw, 9px);
+    }
+}
+
+@media (max-width: 500px) {
+    .header {
+        height: 50vw;
+        margin: 15px auto;
+    }
+
+    .header-contents {
+        max-width: 65%;
+        bottom: 8%;
+        left: 4vw;
+        gap: 6px;
+    }
+
+    .header-contents h2 {
+        font-size: 16px;
+        line-height: 1.2;
+    }
+
+    .header-contents p {
+        font-size: 8px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .header-contents button {
+        padding: 6px 14px;
+        font-size: 10px;
+    }
+}

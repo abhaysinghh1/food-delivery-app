@@ -1,0 +1,120 @@
+.footer {
+    color: var(--footer-text);
+    background-color: var(--footer-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    padding-top: 20px;
+    transition: background-color 0.4s ease;
+}
+
+.footer-content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 80px;
+    margin-top: 20px;
+}
+
+.footer-content-right,
+.footer-content-left,
+.footer-content-center {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.footer-content-right,
+.footer-content-left,
+.footer-content-center {
+    color: var(--footer-heading);
+}
+
+.footer-social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social-icons img {
+    width: 40px;
+    cursor: pointer;
+}
+
+.footer hr {
+    width: 100%;
+    border: none;
+    height: 1px;
+    background-color: var(--footer-hr);
+    border: none;
+}
+
+.footer-content-left-p {
+    padding-bottom: 10px;
+    color: var(--footer-text);
+}
+
+.footer-copyright p {
+    color: var(--footer-text);
+}
+
+@media (max-width: 900px) {
+    .footer-content {
+        gap: 40px;
+    }
+
+    .footer-social-icons img {
+        width: 35px;
+    }
+}
+
+@media (max-width: 750px) {
+    .footer {
+        padding: 20px 15px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        text-align: center;
+    }
+
+    .footer-social-icons {
+        justify-content: center;
+    }
+
+    .footer-content-left img {
+        width: 120px;
+    }
+
+    .footer-content-center ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .footer {
+        padding: 15px 10px;
+        gap: 15px;
+    }
+
+    .footer-content {
+        gap: 20px;
+        margin-top: 10px;
+    }
+
+    .footer-content-left-p {
+        font-size: 13px;
+    }
+
+    .footer-social-icons img {
+        width: 30px;
+    }
+
+    .footer-copyright p {
+        font-size: 12px;
+    }
+}
