@@ -1,0 +1,146 @@
+.add {
+    max-width: 700px;
+}
+
+.add h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.add p.page-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 28px;
+}
+
+.add form {
+    background: #1a1a2e;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Image Upload */
+.add-img-upload p,
+.add-product-name p,
+.add-product-description p,
+.add-category p,
+.add-price p {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.add-img-upload label {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.add-img-upload img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px dashed rgba(255, 107, 107, 0.4);
+    transition: border-color 0.3s;
+    background: rgba(255,255,255,0.03);
+}
+
+.add-img-upload img:hover {
+    border-color: #ff6b6b;
+}
+
+/* Text Inputs */
+.add-product-name input,
+.add-product-description textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    font-size: 15px;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    outline: none;
+    transition: all 0.3s;
+    resize: vertical;
+}
+
+.add-product-name input::placeholder,
+.add-product-description textarea::placeholder {
+    color: rgba(255,255,255,0.25);
+}
+
+.add-product-name input:focus,
+.add-product-description textarea:focus {
+    border-color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.05);
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+}
+
+/* Category + Price Row */
+.add-category-price {
+    display: flex;
+    gap: 24px;
+}
+
+.add-category,
+.add-price {
+    flex: 1;
+}
+
+.add-category select,
+.add-price input {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    font-size: 15px;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    outline: none;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.add-category select option {
+    background: #1a1a2e;
+    color: #fff;
+}
+
+.add-category select:focus,
+.add-price input:focus {
+    border-color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.05);
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+}
+
+/* Submit Button */
+.add-btn {
+    align-self: flex-start;
+    padding: 13px 36px;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 0.3px;
+}
+
+.add-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+}

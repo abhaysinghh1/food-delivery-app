@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/* ===== Light Theme (default) ===== */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9f9f9;
+  --bg-card: #ffffff;
+  --text-primary: #323234;
+  --text-secondary: #49557e;
+  --text-muted: #808080;
+  --text-desc: #676767;
+  --text-menu: #747474;
+  --heading-color: #282828;
+  --border-color: #e2e2e2;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --card-shadow: 0px 0px 10px #00000015;
+  --btn-hover-bg: #fff4f2;
+  --food-counter-bg: #ffffff;
+  --footer-bg: #323232;
+  --footer-text: #d9d9d9;
+  --footer-heading: #ffffff;
+  --footer-hr: #d9d9d9;
+  --icon-filter: none;
+  --input-bg: #ffffff;
+  --input-border: #c5c5c5;
+}
+
+/* ===== Dark Theme ===== */
+body.dark {
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --bg-card: #1f2940;
+  --text-primary: #e0e0e0;
+  --text-secondary: #a8b4d0;
+  --text-muted: #8892a8;
+  --text-desc: #9ca3af;
+  --text-menu: #b0b8c8;
+  --heading-color: #f0f0f0;
+  --border-color: #2d3a52;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --card-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+  --btn-hover-bg: #2a1f2e;
+  --food-counter-bg: #1f2940;
+  --footer-bg: #0f0f23;
+  --footer-text: #8892a8;
+  --footer-heading: #e0e0e0;
+  --footer-hr: #2d3a52;
+  --icon-filter: brightness(0.85) invert(0.85);
+  --input-bg: #1f2940;
+  --input-border: #2d3a52;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit';
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.app {
+  width: 80%;
+  margin: auto;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 750px) {
+  .app {
+    width: 90%;
+  }
+}
+
+@media (max-width: 500px) {
+  .app {
+    width: 95%;
+  }
+}
+
+/* ===== Lazy Loading Styles ===== */
+.page-loader {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--border-color);
+  border-top-color: tomato;
+  border-radius: 50%;
+  animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
