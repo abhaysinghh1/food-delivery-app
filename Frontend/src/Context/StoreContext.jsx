@@ -9,7 +9,7 @@ export const StoreContextProvider = (props) => {
     const [cartItems, setCartItems] = useState({});
     const [food_list, setFoodList] = useState([]);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const url = "http://localhost:4000";
+    const url = "https://food-delivery-app-yi0a.onrender.com";
     const [token, setToken] = useState("");
     const [userRole, setUserRole] = useState(localStorage.getItem('userRole') || 'customer');
     const [userName, setUserName] = useState(localStorage.getItem('userName') || '');
