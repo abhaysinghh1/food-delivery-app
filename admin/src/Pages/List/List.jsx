@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 
 
-const List = ({ url }) => {
+const List = ({ url, token }) => {
 
   const [list, setList] = useState([]);
 
@@ -20,7 +20,7 @@ const List = ({ url }) => {
     }
   }
   const removeFood = async (foodId) => {
-    const response = await axios.post(`${url}/api/food/remove`, { id: foodId });
+    const response = await axios.post(`${url}/api/food/remove`, { id: foodId }, { headers: { token } });
     // we are using axios beacuse we are making an api call to the backend
 
     await fetchList();

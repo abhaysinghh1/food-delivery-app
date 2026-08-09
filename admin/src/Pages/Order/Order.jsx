@@ -3,12 +3,12 @@ import './Order.css'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 
-const Order = ({ url }) => {
+const Order = ({ url, token }) => {
     const [orders, setOrders] = useState([])
 
     const fetchOrders = async () => {
         try {
-            const response = await axios.get(url + '/api/order/list')
+            const response = await axios.get(url + '/api/order/list', { headers: { token } })
             if (response.data.success) {
                 setOrders(response.data.data.reverse())
             } else {
@@ -21,7 +21,7 @@ const Order = ({ url }) => {
 
     const updateStatus = async (orderId, status) => {
         try {
-            const response = await axios.post(url + '/api/order/status', { orderId, status })
+            const response = await axios.post(url + '/api/order/status', { orderId, status }, { headers: { token } })
             if (response.data.success) {
                 toast.success('Order status updated!')
                 fetchOrders()

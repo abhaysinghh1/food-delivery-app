@@ -2,23 +2,29 @@ import React, { useState } from 'react'
 import './Login.css'
 import { assets } from '../../assets/assets'
 
-const Login = ({ setToken }) => {
+import axios from 'axios'
+
+const Login = ({ setToken, url }) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
 
-    const ADMIN_EMAIL = 'admin@quickbite.com'
-    const ADMIN_PASSWORD = 'admin123'
-
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault()
         setError('')
-        if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
-            const token = btoa(`${email}:${Date.now()}`)
-            localStorage.setItem('adminToken', token)
-            setToken(token)
-        } else {
-            setError('Invalid email or password. Please try again.')
+        try {
+            const response = await axios.post(`${url}/api/user/login`, { email, password });
+            if (response.data.success && response.data.role === 'owner') {
+                const token = response.data.token;
+                localStorage.setItem('adminToken', token);
+                setToken(token);
+            } else if (response.data.success) {
+                setError('Access denied: You must be an owner to use this panel.');
+            } else {
+                setError(response.data.message || 'Invalid email or password.');
+            }
+        } catch (err) {
+            setError('Error connecting to the server. Please try again.');
         }
     }
 
@@ -84,7 +90,7 @@ const Login = ({ setToken }) => {
                     </form>
 
                     <div className='login-hint'>
-                        <p>Demo credentials: <strong>admin@quickbite.com</strong> / <strong>admin123</strong></p>
+                        <p>Sign in with your <strong>Owner</strong> account credentials.</p>
                     </div>
                 </div>
             </div>

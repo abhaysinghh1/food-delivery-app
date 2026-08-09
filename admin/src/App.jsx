@@ -22,7 +22,7 @@ const App = () => {
     return (
       <>
         <ToastContainer theme='colored' />
-        <Login setToken={setToken} />
+        <Login setToken={setToken} url={url} />
       </>
     )
   }
@@ -35,9 +35,9 @@ const App = () => {
         <Sidebar />
         <main className="admin-main">
           <Routes>
-            <Route path='/add' element={<Add url={url} />} />
-            <Route path='/list' element={<List url={url} />} />
-            <Route path='/order' element={<Order url={url} />} />
+            <Route path='/add' element={<Add url={url} token={token} />} />
+            <Route path='/list' element={<List url={url} token={token} />} />
+            <Route path='/order' element={<Order url={url} token={token} />} />
             <Route path='/' element={<Navigate to='/add' replace />} />
           </Routes>
         </main>
