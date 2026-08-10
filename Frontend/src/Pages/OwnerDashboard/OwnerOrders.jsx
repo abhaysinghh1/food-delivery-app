@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import { StoreContext } from '../../Context/StoreContext'
 import './OwnerPages.css'
 
 const OwnerOrders = ({ url }) => {
+    const { token } = React.useContext(StoreContext);
     const [orders, setOrders] = useState([])
 
     const fetchOrders = async () => {
         try {
-            const response = await axios.get(url + '/api/order/list')
+            const response = await axios.get(url + '/api/order/list', { headers: { token } })
             if (response.data.success) {
                 setOrders(response.data.data.reverse())
             } else {
@@ -21,7 +23,7 @@ const OwnerOrders = ({ url }) => {
 
     const updateStatus = async (orderId, status) => {
         try {
-            const response = await axios.post(url + '/api/order/status', { orderId, status })
+            const response = await axios.post(url + '/api/order/status', { orderId, status }, { headers: { token } })
             if (response.data.success) {
                 toast.success('Order status updated!')
                 fetchOrders()

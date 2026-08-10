@@ -8,12 +8,15 @@ import { StoreContext } from '../../Context/StoreContext'
 import { assets } from '../../assets/assets'
 
 const OwnerDashboard = () => {
-    const { setToken, setUserRole, url } = useContext(StoreContext);
+    const { setToken, setUserRole, url, userName, userEmail } = useContext(StoreContext);
     const navigate = useNavigate();
 
     const handleLogout = () => {
+        localStorage.removeItem('token');
         localStorage.removeItem('adminToken');
         localStorage.removeItem('userRole');
+        localStorage.removeItem('userName');
+        localStorage.removeItem('userEmail');
         setToken('');
         setUserRole('customer');
         navigate('/');
@@ -26,8 +29,8 @@ const OwnerDashboard = () => {
                 <div className='owner-sidebar-header'>
                     <div className='owner-avatar'>🏪</div>
                     <div>
-                        <p className='owner-name'>Restaurant Owner</p>
-                        <p className='owner-email'>admin@quickbite.com</p>
+                        <p className='owner-name'>{userName || 'Restaurant Owner'}</p>
+                        <p className='owner-email'>{userEmail || 'owner@quickbite.com'}</p>
                     </div>
                 </div>
 

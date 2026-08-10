@@ -8,10 +8,14 @@ const authMiddleware = async (req, res, next) => {
     }
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        if (!req.body) req.body = {};  // guard for multipart/form-data requests
         req.body.userId = decoded.id;
         req.body.userRole = decoded.role;
         next();
     } catch (error) {
+        console.log("❌ JWT Error:", error.message);
+        console.log("🔑 Token received:", token?.substring(0, 30) + "...");
+        console.log("🔑 JWT_SECRET:", process.env.JWT_SECRET);
         res.json({ success: false, message: "Invalid token. Please Login Again." });
     }
 };

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import { StoreContext } from '../../Context/StoreContext'
 import './OwnerPages.css'
 
 const OwnerList = ({ url }) => {
+    const { token } = React.useContext(StoreContext);
     const [list, setList] = useState([]);
 
     const fetchList = async () => {
@@ -13,7 +15,7 @@ const OwnerList = ({ url }) => {
     }
 
     const removeFood = async (id) => {
-        const response = await axios.post(`${url}/api/food/remove`, { id });
+        const response = await axios.post(`${url}/api/food/remove`, { id }, { headers: { token } });
         await fetchList();
         if (response.data.success) toast.success("Item removed!");
         else toast.error("Error removing item");

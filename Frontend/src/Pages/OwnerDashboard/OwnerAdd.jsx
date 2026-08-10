@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import { StoreContext } from '../../Context/StoreContext'
 import './OwnerPages.css'
 
 const OwnerAdd = ({ url }) => {
+    const { token, fetchFoodList } = React.useContext(StoreContext);
     const [image, setImage] = useState(false);
     const [data, setData] = useState({ name: "", description: "", price: "", category: "Salad" });
 
@@ -17,10 +19,11 @@ const OwnerAdd = ({ url }) => {
         formData.append("price", Number(data.price));
         formData.append("category", data.category);
         formData.append("image", image);
-        const response = await axios.post(`${url}/api/food/add`, formData);
+        const response = await axios.post(`${url}/api/food/add`, formData, { headers: { token } });
         if (response.data.success) {
             setData({ name: "", description: "", price: "", category: "Salad" });
             setImage(false);
+            await fetchFoodList();  // refresh food list so home page shows new item immediately
             toast.success("Food item added!");
         } else {
             toast.error(response.data.message);
