@@ -18,7 +18,6 @@ A production-grade, full-stack food delivery platform built with the **MERN stac
 ### 👥 Customer Side
 - Browse food items filtered by **8 categories** (Salad, Rolls, Desserts, etc.)
 - **Add to cart** with persistent cart state synced to MongoDB
-- **Stripe-powered checkout** with real payment processing
 - Order history and **real-time order status** (Food Processing → Out for Delivery → Delivered)
 - Fully **responsive** design for mobile and desktop
 
